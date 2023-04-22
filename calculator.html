@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calculator </title>
+<style>
+
+*{
+margin:0px;
+padding:0;
+background:white;
+font-family:sans-serif;
+outline:none;
+}
+
+.container{
+height:110vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.calc{
+background-color:gray;
+padding:15px;
+border-radius:35px;
+box-shadow:10px 12px 12px 10px black;
+display:grid;
+border:3px solid black;
+grid-template-columns:repeat(4,65px);
+}
+
+input{
+grid-column:span 4;
+height:60px;
+width:236px;
+box-shadow:inset -5px -6px 13px #ffffff,
+           inset 5px 6px 13px rgba(0,0,0,.20);
+border:2px solid floralwhite;
+border-radius:34px;
+color:red;
+font-size:40px;
+text-align:end;
+margin:auto;
+margin-top:30px;
+margin-bottom:30px;
+padding:14px;
+}
+
+button{
+height:40px;
+width:40px;
+background-color:white;
+box-shadow:-4px -4px -10px #ffff3a,
+           4px 4px 10px rgba(0,0,0,.16);
+border:none;
+border-radius:50%;
+margin:6px;
+font-size:14px;
+justify-content:center;
+align-items:center;
+
+}
+
+.equal{
+width:110px;
+border-radius:40px;
+background:red;
+font-size:34px;
+text-align:center;
+border:2px solid white;
+
+}
+
+
+.equal:hover{
+border:2px solid red;
+background:white
+
+
+
+
+}
+.spl{
+background-color:#87cefa;
+font-size:19px;
+text-align:center;
+border:2px solid white;
+
+}
+
+
+.spl:hover{
+
+border:2px solid red;
+
+
+
+
+
+
+}
+.spl2{
+background:yellow;
+font-size:17px;
+text-align:center;
+border:2.5px solid white;
+}
+
+.spl2:hover{
+border:2.5px solid black;
+
+
+
+}
+.spl3:hover{
+background-color:yellow;
+color:red;
+border:2px solid red;
+
+
+}
+
+.spl3{
+border:2px solid black;
+font-size:18px;
+
+}
+
+.head{
+background-color:;
+margin-left:86px;
+margin-bottom:0px;
+}
+
+p{
+#margin-bottom:10px;
+font-size:30px;
+color:orange;
+font-family:Roboto;
+font-weight:bold;
+}
+
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="calc">
+    <div class="head">
+    <p>CASIO</p>
+    </div class="head">
+    <input type="text" placeholder="0" id="answer">
+    <button onclick="Clear()"class="spl">Cl</button>
+    <button onclick="del()"class="spl">Del</button>
+    <button onclick="display('%')"class="spl2">%</button>
+    <button onclick="display('/')"class="spl2">/</button>
+    <button onclick="display('7')"class="spl3">7</button>
+    <button onclick="display('8')"class="spl3">8</button>
+    <button onclick="display('9')"class="spl3">9</button>
+    <button onclick="display('*')"class="spl2">x</button>
+    <button onclick="display('4')"class="spl3">4</button>
+    <button onclick="display('5')"class="spl3">5</button>
+    <button onclick="display('6')"class="spl3">6</button>
+    <button onclick="display('-')"class="spl2">-</button>
+    <button onclick="display('1')"class="spl3">1</button>
+    <button onclick="display('2')"class="spl3">2</button>
+    <button onclick="display('3')"class="spl3">3</button>
+    <button onclick="display('+')"class="spl2">+</button>
+    <button onclick="display('.')"class="spl3">.</button>
+    <button onclick="display('0')"class="spl3">0</button>
+    <button onclick="Calculate()" class="equal">=</button>
+
+
+  </div>
+</div>
+
+
+<script>
+  let outputScreen=document.getElementById("answer");
+
+  function display(num){
+  outputScreen.value +=num;
+  }
+
+  function Calculate(){
+     try{
+        outputScreen.value=eval(outputScreen.value);
+     }
+     catch(err)
+     {
+        alert("Syntax Error")
+     }
+  }
+  
+  function Clear(){
+        outputScreen.value="";
+  }
+
+  function del(){
+         outputScreen.value= outputScreen.value.slice(0,-1);
+  }   
+
+</script>
+
+</body>
+</html> 
